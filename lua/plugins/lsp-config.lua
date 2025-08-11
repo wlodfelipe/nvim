@@ -20,6 +20,21 @@ return {
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
       local lspconfig = require("lspconfig")
+      lspconfig.jedi_language_server.setup({
+        capabilities = capabilities,
+        settings = {
+          jedi = {
+            -- Configurações do Jedi
+            useLibraryCodeForTypes = true,
+            completion = {
+              fuzzy = true, -- Fuzzy completion
+            },
+            diagnostics = {
+              enabled = true, -- Habilitar diagnóstico
+            },
+          }
+        }
+      })
       lspconfig.tsserver.setup({
         capabilities = capabilities
       })

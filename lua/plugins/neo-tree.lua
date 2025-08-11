@@ -8,5 +8,6 @@ return {
     },
   config = function()
     vim.keymap.set('n', '<C-n>', ':Neotree toggle<CR>', { noremap = true, silent = true })
+    vim.keymap.set('n', '<C-b>', ':Neotree focus<CR>', { noremap = true, silent = true })
   end
 }
